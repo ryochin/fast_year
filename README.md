@@ -1,8 +1,8 @@
 # fast_year
 
-![Gem](https://img.shields.io/gem/v/fast_year.svg) ![Gem](https://img.shields.io/gem/dt/fast_year.svg) 
+![Gem](https://img.shields.io/gem/v/fast_year.svg) ![Gem](https://img.shields.io/gem/dt/fast_year.svg) ![License](https://img.shields.io/badge/license-MIT-blue.svg)
 
-`fast_year` is a Ruby's simple C extension which provides a faster implementation of getting the current year.
+[fast_year](https://rubygems.org/gems/fast_year) is a Ruby's simple C extension which provides a faster implementation of getting the current year.
 
 The function call is almost **2x faster** compared to ordinary `Time.now.year()`.
 
@@ -12,7 +12,8 @@ The function call is almost **2x faster** compared to ordinary `Time.now.year()`
 `FastYear.year()` returns the current local 4 digit year.
 
 ```ruby
-irb> FastYear.year    # -> 2020
+irb> require 'fast_year'
+irb> FastYear.year    # -> 2022
 ```
 
 And is intended for placing as HTML footer signature like:
@@ -35,6 +36,14 @@ And then execute:
 $ bundle install
 ```
 
+Benchmark
+---------
+
+```
+Comparison:
+           fast_year:  5976662.0 i/s
+           time_year:  2818645.4 i/s - 2.12x  (± 0.00) slower
+```
 
 ## Development
 
